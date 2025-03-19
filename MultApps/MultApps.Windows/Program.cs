@@ -18,7 +18,7 @@ namespace MultApps.Windows
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-            Application.Run(new MDIPrincipal());
+            Application.Run(new FrmCarteirinha());
         }
     }
 }
