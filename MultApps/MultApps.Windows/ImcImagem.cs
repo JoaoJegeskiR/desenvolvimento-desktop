@@ -33,5 +33,11 @@ namespace MultApps.Windows
         public const string CriançaObesidade = "https://abeso.org.br/wp-content/uploads/2019/12/imc_c_01.png";
         #endregion 
 
+        public const string idoso = "https://w7.pngwing.com/pngs/603/390/png-transparent-computer-icons-old-age-old-man-ribbon-smiley-cartoon.png";
+        public const string Criança = "https://e7.pngegg.com/pngimages/407/726/png-clipart-cartoon-school-cartoon-child-child-photography-thumbnail.png";
+        public const string Joven = "https://www.vhv.rs/dpng/d/284-2843581_transparent-jovenes-png-jovenes-png-png-download.png";
+        public const string Adulto = "https://www.imagenspng.com.br/wp-content/uploads/2019/10/luccas-neto-png-08.png";
+
+
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,66 +18,88 @@ namespace MultApps.Windows
             InitializeComponent();
         }
 
-        private void btnGerarCarteirinha_Click(object sender, EventArgs e)
+        private void btnGerar_Click(object sender, EventArgs e)
         {
-            string nome = txtNomeCompleto.Text;
-            string cpf = txtCPF.Text;
+            string nome = txtNome.Text.Trim();
+            string cpf = txtCPF.Text.Trim();
+            string dataTexto = txtNascimento.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(cpf) || string.IsNullOrWhiteSpace(dataTexto))
+            {
+                MessageBox.Show("Por favor, preencha todos os campos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (cpf.Length != 11 || !long.TryParse(cpf, out _))
+            {
+                MessageBox.Show("Digite um CPF válido (apenas números).", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             DateTime dataNascimento;
-            if (!DateTime.TryParse(txtNascimento.Text, out dataNascimento))
+            if (!DateTime.TryParseExact(dataTexto, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dataNascimento))
             {
-                MessageBox.Show("Data de nascimento inválida!");
+                MessageBox.Show("Insira a data no formato DD/MM/AAAA.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            int idade = CalcularIdade(dataNascimento);
-            if (idade == -1)
-            {
-                MessageBox.Show("Preencha todos os campos!", "aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            int idade = DateTime.Today.Year - dataNascimento.Year;
+            if (dataNascimento.Date > DateTime.Today.AddYears(-idade)) idade--;
 
-            int idadeUsuario = DateTime.Now.Year - dataNascimento.Year;
-            if (DateTime.Now < dataNascimento.AddYears(idade)) idade--;
+            string cpfOfuscado = OfuscarCPF(cpf);
 
-            Color corZona;
-            picIcone.Load("");
-
+            Color corCarteirinha;
+            string iconePath = "";
             if (idade <= 12)
             {
-                corZona = Color.Blue;
-                picIcone.Load("https://img.cdndsgni.com/preview/11614026.jpg");
+                corCarteirinha = Color.Blue; // Zona Azul - Criança
+                iconePath = "icones/crianca.png";
+                picBoxIcone.Load(ImcImagem.Criança);
 
             }
-
-            else if (idade >=60 ) 
+        
+            else if (idade <= 17)
             {
-                corZona = Color.Green;
-                picIcone.Load("https://img.cdndsgni.com/preview/10234370.jpg");
-
+                corCarteirinha = Color.Yellow; // Zona Amarela - Jovem
+                iconePath = "icones/jovem.png";
+                picBoxIcone.Load(ImcImagem.Joven);
             }
 
-            else if ( idade >= 13 && idade <= 25)
+            else if (idade <= 59)
             {
-                corZona = Color.Yellow;
-                picIcone.Load("https://www.pngarts.com/files/3/Young-Man-PNG-Download-Image.png");
-
+                corCarteirinha = Color.Purple; // Zona Roxa - Adulto
+                iconePath = "icones/adulto.png";
+                picBoxIcone.Load(ImcImagem.Adulto);
             }
 
             else
             {
-                corZona = Color.Purple;
-                picIcone.Load("https://cdn-icons-png.flaticon.com/512/3107/3107137.png");
+                corCarteirinha = Color.Green; // Zona Verde - Idoso
+                iconePath = "icones/Idoso.png";
+                 picBoxIcone.Load(ImcImagem.idoso);
+            }
 
+            pnlCarteirinha.BackColor = corCarteirinha;
+            lblNomeCarteirinha.Text = nome;
+            lblIdadeCarteirinha.Text = $"Idade: {idade} anos";
+            lblCPFcarteirinha.Text = $"CPF: {cpfOfuscado}";
+
+            if (System.IO.File.Exists(iconePath))
+            {
+                picBoxIcone.Image = Image.FromFile(iconePath);
             }
 
 
-
+            pnlCarteirinha.Visible = true;
+              
+        }
+        private string OfuscarCPF(string cpf)
+        {
+            return $"***.{cpf.Substring(3, 3)}.{cpf.Substring(6, 3)}.***";
         }
 
-        
+
+
     }
-            
-        
-    
 }
     
