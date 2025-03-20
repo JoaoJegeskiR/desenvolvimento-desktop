@@ -16,7 +16,7 @@ namespace MultApps.Windows
         {
             InitializeComponent();
         }
-        private void chkFeminino_CheckedChanged(object sender, EventArgs e)
+        private void ChkFeminino_CheckedChanged(object sender, EventArgs e)
         {
             chkFeminino.ForeColor = Color.DarkOrange;
             chkMasculino.ForeColor = Color.Gray;

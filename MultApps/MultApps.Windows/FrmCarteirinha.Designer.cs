@@ -35,13 +35,13 @@
             this.txtNomeCompleto = new System.Windows.Forms.TextBox();
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.btnGerarCarteirinha = new System.Windows.Forms.Button();
-            this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
-            this.panelCarteirinha = new System.Windows.Forms.Panel();
+            this.pnlCarteirinha = new System.Windows.Forms.Panel();
             this.lblIdade = new System.Windows.Forms.Label();
             this.lblCadastroDePessoaFisica = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.picIcone = new System.Windows.Forms.PictureBox();
-            this.panelCarteirinha.SuspendLayout();
+            this.txtNascimento = new System.Windows.Forms.TextBox();
+            this.pnlCarteirinha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcone)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,23 +110,16 @@
             this.btnGerarCarteirinha.UseVisualStyleBackColor = true;
             this.btnGerarCarteirinha.Click += new System.EventHandler(this.btnGerarCarteirinha_Click);
             // 
-            // dtpDataNascimento
+            // pnlCarteirinha
             // 
-            this.dtpDataNascimento.Location = new System.Drawing.Point(17, 236);
-            this.dtpDataNascimento.Name = "dtpDataNascimento";
-            this.dtpDataNascimento.Size = new System.Drawing.Size(222, 20);
-            this.dtpDataNascimento.TabIndex = 8;
-            // 
-            // panelCarteirinha
-            // 
-            this.panelCarteirinha.Controls.Add(this.lblIdade);
-            this.panelCarteirinha.Controls.Add(this.lblCadastroDePessoaFisica);
-            this.panelCarteirinha.Controls.Add(this.lblNome);
-            this.panelCarteirinha.Controls.Add(this.picIcone);
-            this.panelCarteirinha.Location = new System.Drawing.Point(473, 57);
-            this.panelCarteirinha.Name = "panelCarteirinha";
-            this.panelCarteirinha.Size = new System.Drawing.Size(286, 323);
-            this.panelCarteirinha.TabIndex = 9;
+            this.pnlCarteirinha.Controls.Add(this.lblIdade);
+            this.pnlCarteirinha.Controls.Add(this.lblCadastroDePessoaFisica);
+            this.pnlCarteirinha.Controls.Add(this.lblNome);
+            this.pnlCarteirinha.Controls.Add(this.picIcone);
+            this.pnlCarteirinha.Location = new System.Drawing.Point(473, 57);
+            this.pnlCarteirinha.Name = "pnlCarteirinha";
+            this.pnlCarteirinha.Size = new System.Drawing.Size(286, 323);
+            this.pnlCarteirinha.TabIndex = 9;
             // 
             // lblIdade
             // 
@@ -166,14 +159,21 @@
             this.picIcone.TabIndex = 0;
             this.picIcone.TabStop = false;
             // 
+            // txtNascimento
+            // 
+            this.txtNascimento.Location = new System.Drawing.Point(17, 235);
+            this.txtNascimento.Name = "txtNascimento";
+            this.txtNascimento.Size = new System.Drawing.Size(173, 20);
+            this.txtNascimento.TabIndex = 10;
+            // 
             // FrmCarteirinha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panelCarteirinha);
-            this.Controls.Add(this.dtpDataNascimento);
+            this.Controls.Add(this.txtNascimento);
+            this.Controls.Add(this.pnlCarteirinha);
             this.Controls.Add(this.btnGerarCarteirinha);
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.txtNomeCompleto);
@@ -183,8 +183,8 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmCarteirinha";
             this.Text = "FrmCarteirinha";
-            this.panelCarteirinha.ResumeLayout(false);
-            this.panelCarteirinha.PerformLayout();
+            this.pnlCarteirinha.ResumeLayout(false);
+            this.pnlCarteirinha.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcone)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -200,11 +200,11 @@
         private System.Windows.Forms.TextBox txtNomeCompleto;
         private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Button btnGerarCarteirinha;
-        private System.Windows.Forms.DateTimePicker dtpDataNascimento;
-        private System.Windows.Forms.Panel panelCarteirinha;
+        private System.Windows.Forms.Panel pnlCarteirinha;
         private System.Windows.Forms.Label lblCadastroDePessoaFisica;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.PictureBox picIcone;
         private System.Windows.Forms.Label lblIdade;
+        private System.Windows.Forms.TextBox txtNascimento;
     }
 }
