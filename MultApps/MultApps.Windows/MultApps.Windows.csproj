@@ -59,6 +59,12 @@
     <Compile Include="FrmAposentadoria.Designer.cs">
       <DependentUpon>FrmAposentadoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAçai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAçai.Designer.cs">
+      <DependentUpon>FrmAçai.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCalculadoraIMC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </Compile>
     <EmbeddedResource Include="FrmAposentadoria.resx">
       <DependentUpon>FrmAposentadoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAçai.resx">
+      <DependentUpon>FrmAçai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCalculadoraIMC.resx">
       <DependentUpon>FrmCalculadoraIMC.cs</DependentUpon>
