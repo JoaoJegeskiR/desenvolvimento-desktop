@@ -139,5 +139,38 @@
   <ItemGroup>
     <None Include="Resources\Splash Screen1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Açai 300ml.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Açai 300ml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Açai 300ml1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Granola.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banana2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\morangos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Confetes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sucrilhos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chocoball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cob. de morango.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cob. de L. Condensado.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

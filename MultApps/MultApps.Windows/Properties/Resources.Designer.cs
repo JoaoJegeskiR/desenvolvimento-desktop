@@ -63,6 +63,106 @@ namespace MultApps.Windows.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Açai_300ml {
+            get {
+                object obj = ResourceManager.GetObject("Açai 300ml", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Açai_300ml1 {
+            get {
+                object obj = ResourceManager.GetObject("Açai 300ml1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Açai_300ml2 {
+            get {
+                object obj = ResourceManager.GetObject("Açai 300ml2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap banana2 {
+            get {
+                object obj = ResourceManager.GetObject("banana2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chocoball {
+            get {
+                object obj = ResourceManager.GetObject("chocoball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cob__de_L__Condensado {
+            get {
+                object obj = ResourceManager.GetObject("Cob. de L. Condensado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cob__de_morango {
+            get {
+                object obj = ResourceManager.GetObject("Cob. de morango", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Confetes {
+            get {
+                object obj = ResourceManager.GetObject("Confetes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Granola {
+            get {
+                object obj = ResourceManager.GetObject("Granola", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap morangos {
+            get {
+                object obj = ResourceManager.GetObject("morangos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Splash_Screen {
             get {
                 object obj = ResourceManager.GetObject("Splash Screen", resourceCulture);
@@ -76,6 +176,16 @@ namespace MultApps.Windows.Properties {
         internal static System.Drawing.Bitmap Splash_Screen1 {
             get {
                 object obj = ResourceManager.GetObject("Splash Screen1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sucrilhos {
+            get {
+                object obj = ResourceManager.GetObject("Sucrilhos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
