@@ -10,14 +10,12 @@ using System.Windows.Forms;
 
 namespace MultApps.Windows
 {
-    public partial class MDIPrincipal : Form
+    public partial class Principal: Form
     {
-        public MDIPrincipal()
+        public Principal()
         {
             InitializeComponent();
         }
-
-        
 
         private void menuCalculadoraImc_Click(object sender, EventArgs e)
         {
@@ -33,4 +31,3 @@ namespace MultApps.Windows
         }
     }
 }
-

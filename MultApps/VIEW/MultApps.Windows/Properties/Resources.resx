@@ -118,43 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Sucrilhos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sucrilhos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="morangos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\morangos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Confetes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Confetes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Açai 300ml1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Açai 300ml.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cob. de morango" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cob. de morango.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Splash Screen1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Splash Screen1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chocoball" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chocoball.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Splash Screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Splash Screen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Açai 300ml2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Açai 300ml1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="banana2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\banana2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Granola" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Granola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Açai 300ml" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Açai 300ml.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cob. de L. Condensado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cob. de L. Condensado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Design sem nome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Design sem nome.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

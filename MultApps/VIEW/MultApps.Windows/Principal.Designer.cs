@@ -1,6 +1,6 @@
 ﻿namespace MultApps.Windows
 {
-    partial class MDIPrincipal
+    partial class Principal
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.menuStripPrincipal = new System.Windows.Forms.MenuStrip();
-            this.Calculadora = new System.Windows.Forms.ToolStripMenuItem();
+            this.calculadorasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCalculadoraImc = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripPrincipal.SuspendLayout();
             this.SuspendLayout();
@@ -37,36 +37,37 @@
             // menuStripPrincipal
             // 
             this.menuStripPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Calculadora});
+            this.calculadorasToolStripMenuItem});
             this.menuStripPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuStripPrincipal.Name = "menuStripPrincipal";
-            this.menuStripPrincipal.Size = new System.Drawing.Size(774, 24);
+            this.menuStripPrincipal.Size = new System.Drawing.Size(800, 24);
             this.menuStripPrincipal.TabIndex = 1;
             this.menuStripPrincipal.Text = "menuStrip1";
             // 
-            // Calculadora
+            // calculadorasToolStripMenuItem
             // 
-            this.Calculadora.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.calculadorasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuCalculadoraImc});
-            this.Calculadora.Name = "Calculadora";
-            this.Calculadora.Size = new System.Drawing.Size(82, 20);
-            this.Calculadora.Text = "Calculadora";
+            this.calculadorasToolStripMenuItem.Name = "calculadorasToolStripMenuItem";
+            this.calculadorasToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.calculadorasToolStripMenuItem.Text = "Calculadoras";
             // 
             // menuCalculadoraImc
             // 
             this.menuCalculadoraImc.Name = "menuCalculadoraImc";
-            this.menuCalculadoraImc.Size = new System.Drawing.Size(170, 22);
-            this.menuCalculadoraImc.Text = "CalculadoradeImc";
+            this.menuCalculadoraImc.Size = new System.Drawing.Size(178, 22);
+            this.menuCalculadoraImc.Text = "Calculadora de IMC";
+            this.menuCalculadoraImc.Click += new System.EventHandler(this.menuCalculadoraImc_Click);
             // 
-            // MDIPrincipal
+            // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 526);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStripPrincipal);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStripPrincipal;
-            this.Name = "MDIPrincipal";
+            this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -81,7 +82,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStripPrincipal;
-        private System.Windows.Forms.ToolStripMenuItem Calculadora;
+        private System.Windows.Forms.ToolStripMenuItem calculadorasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuCalculadoraImc;
     }
 }

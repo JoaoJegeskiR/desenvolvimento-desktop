@@ -28,60 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // picLogo
+            // label1
             // 
-            this.picLogo.BackgroundImage = global::MultApps.Windows.Properties.Resources.Splash_Screen1;
-            this.picLogo.Location = new System.Drawing.Point(148, 60);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(391, 224);
-            this.picLogo.TabIndex = 0;
-            this.picLogo.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(35, 688);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(148, 327);
+            this.progressBar1.Location = new System.Drawing.Point(473, 587);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(391, 23);
+            this.progressBar1.Size = new System.Drawing.Size(445, 23);
             this.progressBar1.TabIndex = 1;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(13, 373);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(211, 20);
-            this.dateTimePicker1.TabIndex = 2;
             // 
             // SplashScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::MultApps.Windows.Properties.Resources.Splash_Screen;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(718, 405);
-            this.Controls.Add(this.dateTimePicker1);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = global::MultApps.Windows.Properties.Resources.Design_sem_nome;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1332, 734);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.picLogo);
+            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SplashScreen";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SplashScreen";
-            
+            this.Load += new System.EventHandler(this.SplashScreen_Load);
             this.Shown += new System.EventHandler(this.SplashScreen_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
