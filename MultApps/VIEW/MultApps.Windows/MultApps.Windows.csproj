@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -46,8 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categoria.cs" />
-    <Compile Include="CategoriaRepository.cs" />
     <Compile Include="ClassificacaoImc.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -83,7 +81,6 @@
     <Compile Include="SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="StatusEnum.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +126,10 @@
     <ProjectReference Include="..\..\CONTROLLER\MultApps.Controller\MultApps.Controller.csproj">
       <Project>{584475f0-e11a-4979-8410-6bc64f2ecaf2}</Project>
       <Name>MultApps.Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MODEL\MultApps.Models\MultApps.Models.csproj">
+      <Project>{e61eb934-93a8-40fa-b301-b0ab2a4c1fb6}</Project>
+      <Name>MultApps.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

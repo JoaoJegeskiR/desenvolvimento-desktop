@@ -28,62 +28,105 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.txtDataAlteracao = new System.Windows.Forms.TextBox();
-            this.txtDataCriacao = new System.Windows.Forms.TextBox();
-            this.txtNome = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.lblDataAlteracao = new System.Windows.Forms.Label();
-            this.lblDataCriacao = new System.Windows.Forms.Label();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.lblId = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtDataCadastro = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtDataAlteracao = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(283, 9);
+            this.label1.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 24);
+            this.label1.Size = new System.Drawing.Size(22, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Categorias De Produtos";
+            this.label1.Text = "Id";
             // 
-            // groupBox1
+            // label2
             // 
-            this.groupBox1.Controls.Add(this.panel2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 58);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(659, 154);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cadastrar nova categoria";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(140, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 19);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nome";
             // 
-            // panel2
+            // label3
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.cmbStatus);
-            this.panel2.Controls.Add(this.btnSalvar);
-            this.panel2.Controls.Add(this.txtDataAlteracao);
-            this.panel2.Controls.Add(this.txtDataCriacao);
-            this.panel2.Controls.Add(this.txtNome);
-            this.panel2.Controls.Add(this.txtId);
-            this.panel2.Controls.Add(this.lblStatus);
-            this.panel2.Controls.Add(this.lblDataAlteracao);
-            this.panel2.Controls.Add(this.lblDataCriacao);
-            this.panel2.Controls.Add(this.lblNome);
-            this.panel2.Controls.Add(this.lblId);
-            this.panel2.Location = new System.Drawing.Point(6, 19);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(648, 133);
-            this.panel2.TabIndex = 13;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe Fluent Icons", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(379, 32);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "CATEGORIAS DE PRODUTOS";
+            // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(16, 47);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 26);
+            this.txtId.TabIndex = 3;
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(144, 47);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(192, 26);
+            this.txtNome.TabIndex = 4;
+            // 
+            // txtDataCadastro
+            // 
+            this.txtDataCadastro.Enabled = false;
+            this.txtDataCadastro.Location = new System.Drawing.Point(547, 48);
+            this.txtDataCadastro.Name = "txtDataCadastro";
+            this.txtDataCadastro.Size = new System.Drawing.Size(192, 26);
+            this.txtDataCadastro.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(543, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(130, 19);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Data de Criação";
+            // 
+            // txtDataAlteracao
+            // 
+            this.txtDataAlteracao.Enabled = false;
+            this.txtDataAlteracao.Location = new System.Drawing.Point(755, 48);
+            this.txtDataAlteracao.Name = "txtDataAlteracao";
+            this.txtDataAlteracao.Size = new System.Drawing.Size(192, 26);
+            this.txtDataAlteracao.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(751, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(193, 19);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Data da ultima alteração";
             // 
             // cmbStatus
             // 
@@ -91,107 +134,86 @@
             this.cmbStatus.Items.AddRange(new object[] {
             "Inativo",
             "Ativo",
-            "Excluido"});
-            this.cmbStatus.Location = new System.Drawing.Point(525, 39);
+            "Excluído"});
+            this.cmbStatus.Location = new System.Drawing.Point(358, 47);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(106, 21);
-            this.cmbStatus.TabIndex = 23;
+            this.cmbStatus.Size = new System.Drawing.Size(169, 27);
+            this.cmbStatus.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(354, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 19);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Status";
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(525, 94);
+            this.btnSalvar.Location = new System.Drawing.Point(806, 98);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 22;
+            this.btnSalvar.Size = new System.Drawing.Size(132, 38);
+            this.btnSalvar.TabIndex = 11;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // txtDataAlteracao
+            // groupBox1
             // 
-            this.txtDataAlteracao.Location = new System.Drawing.Point(381, 41);
-            this.txtDataAlteracao.Name = "txtDataAlteracao";
-            this.txtDataAlteracao.Size = new System.Drawing.Size(93, 20);
-            this.txtDataAlteracao.TabIndex = 20;
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.txtId);
+            this.groupBox1.Controls.Add(this.btnSalvar);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.cmbStatus);
+            this.groupBox1.Controls.Add(this.txtNome);
+            this.groupBox1.Controls.Add(this.txtDataAlteracao);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtDataCadastro);
+            this.groupBox1.Location = new System.Drawing.Point(18, 70);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1037, 159);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Cadastrar nova categoria";
             // 
-            // txtDataCriacao
+            // dataGridView1
             // 
-            this.txtDataCriacao.Location = new System.Drawing.Point(265, 41);
-            this.txtDataCriacao.Name = "txtDataCriacao";
-            this.txtDataCriacao.Size = new System.Drawing.Size(81, 20);
-            this.txtDataCriacao.TabIndex = 19;
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(150, 41);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(75, 20);
-            this.txtNome.TabIndex = 18;
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(36, 41);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(74, 20);
-            this.txtId.TabIndex = 17;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(522, 24);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(37, 13);
-            this.lblStatus.TabIndex = 16;
-            this.lblStatus.Text = "Status";
-            // 
-            // lblDataAlteracao
-            // 
-            this.lblDataAlteracao.AutoSize = true;
-            this.lblDataAlteracao.Location = new System.Drawing.Point(378, 24);
-            this.lblDataAlteracao.Name = "lblDataAlteracao";
-            this.lblDataAlteracao.Size = new System.Drawing.Size(122, 13);
-            this.lblDataAlteracao.TabIndex = 15;
-            this.lblDataAlteracao.Text = "Data da ultima alteração";
-            // 
-            // lblDataCriacao
-            // 
-            this.lblDataCriacao.AutoSize = true;
-            this.lblDataCriacao.Location = new System.Drawing.Point(262, 24);
-            this.lblDataCriacao.Name = "lblDataCriacao";
-            this.lblDataCriacao.Size = new System.Drawing.Size(84, 13);
-            this.lblDataCriacao.TabIndex = 14;
-            this.lblDataCriacao.Text = "Data de Criação";
-            // 
-            // lblNome
-            // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(147, 25);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(35, 13);
-            this.lblNome.TabIndex = 13;
-            this.lblNome.Text = "Nome";
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(33, 24);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(16, 13);
-            this.lblId.TabIndex = 12;
-            this.lblId.Text = "Id";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe Fluent Icons", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 291);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1067, 367);
+            this.dataGridView1.TabIndex = 13;
             // 
             // FrmCategoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(800, 346);
+            this.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.ClientSize = new System.Drawing.Size(1067, 658);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
+            this.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCategoria";
+            this.Text = "FrmCategoria";
             this.groupBox1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,18 +222,18 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cmbStatus;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.TextBox txtDataAlteracao;
-        private System.Windows.Forms.TextBox txtDataCriacao;
-        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.Label lblDataAlteracao;
-        private System.Windows.Forms.Label lblDataCriacao;
-        private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtDataCadastro;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtDataAlteracao;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
