@@ -15,6 +15,8 @@ namespace MultApps.Windows
 {
     public partial class FrmCategoria : Form
     {
+        
+
         public FrmCategoria()
         {
             InitializeComponent();
@@ -90,7 +92,7 @@ namespace MultApps.Windows
             dataGridView1.DataSource = listaDeCategorias;
 
 
-            //Depois de preencher será chamado o metodo CellFormating para verificar o status e pintar
+            
             dataGridView1.CellFormatting += dataGridView1_CellFormatting;
 
         }
@@ -116,6 +118,43 @@ namespace MultApps.Windows
                     }
                 }
             }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                MessageBox.Show($"Houve um erro ao clicar duas vezes sobre o Grid");
+                return;
+            }
+
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+            var categoriaId = (int)row.Cells[0].Value;
+
+            var categoriaRepository = new CategoriaRepository();
+            var categoria = categoriaRepository.ObterCategoriaPorId(2);
+
+            if (categoria == null)
+            {
+                MessageBox.Show($"Categoria: #{categoriaId} não encontrada");
+                return;
+            }
+          
+            txtId.Text = categoria.Id.ToString();
+            txtNome.Text = categoria.Nome;
+            cmbStatus.SelectedIndex = (int)categoria.Status;
+            txtDataCadastro.Text = categoria.DataCriacao.ToString("dd/MM/yyyy HH:mm");
+            txtDataAlteracao.Text = categoria.DataAlteracao.ToString("dd/MM/yyyy HH:mm");
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtId.Text = string.Empty;
+            txtNome.Text = string.Empty;
+            txtDataCadastro.Text = string.Empty;
+            txtDataAlteracao.Text = string.Empty;
+            cmbStatus.SelectedIndex = -1;
         }
     }
 }
