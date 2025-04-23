@@ -21,10 +21,40 @@ namespace MultApps.Models.Repositories
 
                 var parametros = new DynamicParameters();
                 parametros.Add("@Nome", categoria.Nome);
-                parametros.Add("@Status", categoria.Status);
+                parametros.Add("@Status", categoria.Status.ToString());
 
                 var resultado = db.Execute(comandoSql, parametros);
                 return resultado > 0;
+            }
+        }
+
+        public bool DeletarCategoria (int id)
+        {
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
+            {
+                var comandoSql = @"DELETE FROM categoria WHERE id = @Id";
+
+                var parametros = new DynamicParameters();
+                parametros.Add("@Id", id);
+
+                var resultado = db.Execute(comandoSql, parametros);
+                return resultado > 0;
+            }
+           
+        }
+
+        public bool AtualizarCategoria(Categoria categoria)
+        {
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
+            {
+                var comandosql = @"UPDATE categoria SET nome = @Nome, status = @Status WHERE id = @Id";
+                var parametros = new DynamicParameters();
+                parametros.Add("@Id", categoria.Id);
+                parametros.Add("@Nome", categoria.Nome);
+                parametros.Add("@Status", categoria.Status);
+
+                var resposta = db.Execute(comandosql, parametros);
+                return resposta > 0;
             }
         }
 
@@ -32,7 +62,7 @@ namespace MultApps.Models.Repositories
         {
             using (IDbConnection db = new MySqlConnection(ConnectionString))
             {
-                var comandoSql = @"SELECT id, Nomecategoria, DataCriacao AS DataCadastro, DataAlteracao AS DataAlteracao, status
+                var comandoSql = @"SELECT id, Nomecategoria AS Nome, DataCriacao AS DataCadastro, DataAlteracao AS DataAlteracao, status
                                    FROM categoria ";
                 var resultado = db.Query<Categoria>(comandoSql).ToList();
                 return resultado;

@@ -8,8 +8,8 @@ namespace MultApps.Models.Enums
 {
     public enum StatusEnum
     {
-        Inativo = 0,
-        Ativo = 1,
-        Excluido = 2
+        inativo = 0,
+        ativo = 1,
+        excluido = 2
     }
 }
