@@ -1,6 +1,6 @@
 ﻿namespace MultApps.Windows
 {
-    partial class Frmcadastro
+    partial class FrmCadastro
     {
         /// <summary>
         /// Required designer variable.
@@ -118,14 +118,11 @@
             // cmbFiltro
             // 
             this.cmbFiltro.FormattingEnabled = true;
-            this.cmbFiltro.Items.AddRange(new object[] {
-            "Todos",
-            "Ativos",
-            "Inativos"});
             this.cmbFiltro.Location = new System.Drawing.Point(381, 108);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(121, 21);
             this.cmbFiltro.TabIndex = 18;
+            this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
             // 
             // lblSenha
             // 
@@ -207,7 +204,7 @@
             this.btnSalvar.TabIndex = 11;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click_1);
             // 
             // lblId
             // 
@@ -242,10 +239,6 @@
             // cmbStatus
             // 
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "inativo",
-            "ativo",
-            "excluído"});
             this.cmbStatus.Location = new System.Drawing.Point(232, 108);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(130, 21);
@@ -304,7 +297,7 @@
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
             // 
-            // Frmcadastro
+            // FrmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -314,9 +307,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label7);
-            this.Name = "Frmcadastro";
+            this.Name = "FrmCadastro";
             this.Text = "Frmcadastro";
-            this.Load += new System.EventHandler(this.Frmcadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

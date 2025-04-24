@@ -2,6 +2,7 @@
 using MultApps.Models.Entities;
 using MultApps.Models.Entities.Abstract;
 using MultiApps.Models.Entidades;
+using MultiApps.Models.Enum;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,9 @@ using System.Threading.Tasks;
 
 namespace MultiApps.Models.Repositories
 {
-    public class UsuarioRepository
+    public  class UsuarioRepository
     {
-        public string ConnectionString = "Server=localhost;Database=cadastro_dev; Uid=root;Pwd=root";
+        public string ConnectionString = "Server=localhost;Database=multapps_dev; Uid=root;Pwd=root";
 
         public bool CadastrarUsuario(Usuario usuario)
         {
@@ -38,7 +39,7 @@ namespace MultiApps.Models.Repositories
         {
             using (IDbConnection db = new MySqlConnection(ConnectionString))
             {
-                var comandoSql = @"SELECT id, nome, cpf, email, senha, data_cadastro AS DataCadastro, data_ultimoacesso AS DataUltimoAcesso, status AS Status FROM usuario";
+                var comandoSql = @"SELECT id, nome, cpf, email, senha, data_cadastro AS DataCadastro,data_ultimo_acesso AS DataUltimoAcesso, status AS Status FROM usuario";
                 var resultado = db.Query<Usuario>(comandoSql).ToList();
                 return resultado;
             }
@@ -109,11 +110,52 @@ namespace MultiApps.Models.Repositories
         {
             using (IDbConnection db = new MySqlConnection(ConnectionString))
             {
-                var comandoSql = "SELECT COUNT * FROM usuario WHERE email = @Email";
+                var comandoSql = "SELECT * FROM usuario WHERE email = @Email";
                 var parametros = new DynamicParameters();
                 parametros.Add("@Email", email);
                 var resultado = db.ExecuteScalar<int>(comandoSql, parametros);
                 return resultado > 0;
+            }
+        }
+
+        public DataTable ListarUsuariosPorStatus(int status)
+        {
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
+            {
+                var comandoSql = @"SELECT id AS Id, 
+                                          nome AS Nome, 
+                                          cpf AS Cpf, 
+                                          email AS Email, 
+                                          data_cadastro AS DataCadastro,
+                                          data_alteracao AS DataAlteracao,
+                                          data_ultimo_acesso AS DataUltimoAcesso     
+                                   FROM usuario
+                                   WHERE status = @Status";
+
+                var parametros = new DynamicParameters();
+                parametros.Add("@Status", status);
+
+                var usuarios = db.Query<Usuario>(comandoSql, parametros).ToList();
+                
+                var dataTable = new DataTable();
+                dataTable.Columns.Add("Id", typeof(int));
+                dataTable.Columns.Add("Nome", typeof(string));
+                dataTable.Columns.Add("Cpf", typeof(string));
+                dataTable.Columns.Add("email", typeof(string));
+                dataTable.Columns.Add("data Cadastro", typeof(DateTime));
+                dataTable.Columns.Add("data Alteracao", typeof(DateTime));
+                dataTable.Columns.Add("data Ultimo Acesso", typeof(DateTime));
+                foreach (var usuario in usuarios)
+                {
+                    dataTable.Rows.Add(usuario.Id,
+                        usuario.Nome,
+                        usuario.Cpf,
+                        usuario.Email,
+                        usuario.DataCriacao,
+                        usuario.DataAlteracao,
+                        usuario.DataUltimoAcesso);
+                }
+                return dataTable;
             }
         }
     }

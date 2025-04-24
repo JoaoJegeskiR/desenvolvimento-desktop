@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MultApps.Models.Entities;
-using MultApps.Models.Enums;
 using MultApps.Models.Repositories;
+using MultiApps.Models.Enum;
 
 namespace MultApps.Windows
 {
@@ -110,13 +110,13 @@ namespace MultApps.Windows
                     StatusEnum status = (StatusEnum)e.Value;
                     switch (status)
                     {
-                        case StatusEnum.inativo:
+                        case StatusEnum.Inativo:
                             e.CellStyle.ForeColor = Color.Gray;
                             break;
-                        case StatusEnum.ativo:
+                        case StatusEnum.Ativo:
                             e.CellStyle.ForeColor = Color.Blue;
                             break;
-                        case StatusEnum.excluido:
+                        case StatusEnum.Excluido:
                             e.CellStyle.ForeColor = Color.Red;
                             break;
                     }

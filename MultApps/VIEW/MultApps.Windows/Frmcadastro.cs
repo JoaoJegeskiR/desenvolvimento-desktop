@@ -1,8 +1,9 @@
 ﻿using MultApps.Models.Entities;
 using MultApps.Models.Entities.Abstract;
-using MultApps.Models.Enums;
 using MultApps.Models.Repositories;
+using MultApps.Models.Services;
 using MultiApps.Models.Entidades;
+using MultiApps.Models.Enum;
 using MultiApps.Models.Repositories;
 using System;
 using System.Collections.Generic;
@@ -16,106 +17,48 @@ using System.Windows.Forms;
 
 namespace MultApps.Windows
 {
-    public partial class Frmcadastro : Form
+    public partial class FrmCadastro : Form
     {
-        public Frmcadastro()
+        public FrmCadastro()
         {
             InitializeComponent();
-       
             var status = new[] { "inativo", "ativo" };
             var filtros = new[] { "todos", "ativos", "inativos" };
             cmbStatus.Items.AddRange(status);
             cmbFiltro.Items.AddRange(filtros);
 
             cmbStatus.SelectedIndex = 1;
+
+            CarregarTodosUsuarios();
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-       
-                if (TemCamposEmBranco())
-                {
-                    return;
-                }
-
-                var usuario = new Usuario();
-                usuario.Nome = txtNome.Text;
-                usuario.Cpf = txtCPF.Text;
-                usuario.Email = txtEmail.Text;
-                usuario.Senha = txtSenha.Text;
-                usuario.Status = (StatusEnum)cmbStatus.SelectedIndex;
-
-                
-                var usuarioRepository = new UsuarioRepository();
-
-                
-                var emailJaExiste = usuarioRepository.EmailJaExiste(usuario.Email);
-                if (emailJaExiste)
-                {
-                    MessageBox.Show($"O email {usuario.Email} já está cadastrado.");
-                    txtEmail.Focus();
-                    return;
-                }
-
-                
-                var sucesso = usuarioRepository.CadastrarUsuario(usuario);
-
-                if (sucesso)
-                {
-                    MessageBox.Show($"Usuário {usuario.Nome} cadastrado com sucesso!");
-                }
-                else
-                {
-                    MessageBox.Show($"Erro ao cadastrar o usuário {usuario.Nome}");
-                }
-
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine(exception);
-                throw;
-            }
-
-        }
-
+   
+        
 
         private bool TemCamposEmBranco()
         {
             if (string.IsNullOrEmpty(txtNome.Text))
             {
-                MessageBox.Show("Campo Nome é obrigatório");
+                MessageBox.Show("Campo nome é obrigatório");
                 txtNome.Focus();
                 return true;
             }
-
-            if (string.IsNullOrEmpty(txtCPF.Text))
-            {
-                MessageBox.Show("Campo Cpf é obrigatório");
-                txtCPF.Focus();
-                return true;
-            }
-
             if (string.IsNullOrEmpty(txtEmail.Text))
             {
-                MessageBox.Show("Campo Email é obrigatório");
+                MessageBox.Show("Campo email é obrigatório");
                 txtEmail.Focus();
                 return true;
             }
-
-            if (string.IsNullOrEmpty(txtSenha.Text))
+            if (string.IsNullOrEmpty(txtCPF.Text))
             {
-                MessageBox.Show("Campo Senha é obrigatório");
-                txtSenha.Focus();
+                MessageBox.Show("Campo CPF é obrigatório");
+                txtCPF.Focus();
                 return true;
             }
-
-            if (cmbStatus.SelectedIndex == -1)
+            if (string.IsNullOrEmpty(txtSenha.Text))
             {
-                MessageBox.Show("Campo Status é obrigatório");
-                cmbStatus.Focus();
+                MessageBox.Show("Campo senha é obrigatório");
+                txtSenha.Focus();
                 return true;
             }
             return false;
@@ -130,24 +73,86 @@ namespace MultApps.Windows
 
             if (sucesso)
             {
-                MessageBox.Show("Categoria deletada com sucesso")
+                MessageBox.Show("Categoria deletada com sucesso");
                 CarregarTodosUsuarios();
             }
-
             else
             {
-                MessageBox.Show("não foi possivel deletar a categoria" + txtNome.Text);
+                MessageBox.Show("Não foi possível deletar a categoria" + txtNome.Text);
             }
 
-            btnDeletar.Enabled = false; 
+            btnDeletar.Enabled = false;
         }
 
-        private void Frmcadastro_Load(object sender, EventArgs e)
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].DataPropertyName == "Status")
+            {
+                if (e.Value != null)
+                {
+                    StatusEnum status = (StatusEnum)e.Value;
+                    switch (status)
+                    {
+                        case StatusEnum.Inativo:
+                            e.CellStyle.ForeColor = Color.Gray;
+                            break;
+                        case StatusEnum.Ativo:
+                            e.CellStyle.ForeColor = Color.Blue;
+                            break;
+                        case StatusEnum.Todos:
+                            e.CellStyle.ForeColor = Color.Red;
+                            break;
+                    }
+                }
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                MessageBox.Show($"Houve um erro ao clicar duas vezes sobre o Grid");
+                return;
+            }
+
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+            var usuarioId = (int)row.Cells[0].Value;
+
+            var usuarioRepository = new UsuarioRepository();
+            var usuario = usuarioRepository.ObterUsuario(usuarioId);
+
+            if (usuario == null)
+            {
+                MessageBox.Show($"Usuario: #{usuarioId} não encontrado");
+                return;
+            }
+
+            txtId.Text = usuarioId.ToString();
+            txtNome.Text = usuario.Nome;
+            txtSenha.Text = "*****";
+            txtEmail.Text = usuario.Email;
+            txtCPF.Text = usuario.Cpf;
+            cmbStatus.SelectedIndex = (int)usuario.Status;
+            txtDataUltimoacesso.Text = usuario.DataAlteracao.ToString("dd/MM/yyyy HH:mm");
+            txtDataUltimoacesso.Text = usuario.DataAlteracao.ToString("dd/MM/yyyy HH:mm");
+
+            btnSalvar.Text = "Atualizar cadastro";
+            btnDeletar.Enabled = true;
+        }
+
+        private void FrmCadastro_Load(object sender, EventArgs e)
         {
             CarregarTodosUsuarios();
         }
 
+        private void CarregarTodosUsuarios()
+        {
+            var usuarioRepository = new UsuarioRepository();
 
+            var listaUsuario = usuarioRepository.ListarTodosUsuarios();
+            dataGridView1.DataSource = listaUsuario;
+        }
 
         private void LimparCampos()
         {
@@ -158,9 +163,93 @@ namespace MultApps.Windows
             cmbStatus.SelectedIndex = 1;
             txtDataCadastro.Text = string.Empty;
             txtDataUltimoacesso.Text = string.Empty;
-
         }
 
-       
+        private void btnSalvar_Click_1(object sender, EventArgs e)
+        {
+            {
+                try
+                {
+                    if (TemCamposEmBranco())
+                    {
+                        return;
+                    }
+                    var usuario = new Usuario();
+                    usuario.Nome = txtNome.Text;
+                    usuario.Cpf = txtCPF.Text;
+                    usuario.Email = txtEmail.Text;
+                    usuario.Senha = CriptografiaService.Criptografar(txtSenha.Text);
+                    usuario.Status = (StatusEnum)cmbStatus.SelectedIndex;
+
+                    var usuarioRepository = new UsuarioRepository();
+
+                    var emailExistente = usuarioRepository.EmailJaExiste(usuario.Email);
+                    if (emailExistente)
+                    {
+                        MessageBox.Show($"O email {usuario.Email} já está cadastrado.");
+                    }
+
+                    if (string.IsNullOrEmpty(txtId.Text))
+                    {
+                        var resultado = usuarioRepository.CadastrarUsuario(usuario);
+                        if (resultado)
+                        {
+                            MessageBox.Show("Categoria cadastrada com sucesso");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro ao cadastrar categoria");
+                        }
+                    }
+                    else
+                    {
+                        usuario.Id = int.Parse(txtId.Text);
+                        var resultado = usuarioRepository.AtualizarUsuario(usuario);
+
+                        if (resultado)
+                        {
+                            MessageBox.Show("Categoria atualizada com sucesso");
+                            btnSalvar.Text = "Cadastrar";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro ao atualizar categoria");
+                        }
+                    }
+
+                    CarregarTodosUsuarios();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var usuarioRepository = new UsuarioRepository();
+
+            switch (cmbFiltro.SelectedIndex)
+            {
+                case 0:
+                    CarregarTodosUsuarios();
+                    break;
+
+                    case 1:
+                    var usuariosativos = usuarioRepository.ListarUsuariosPorStatus(1);
+                    dataGridView1.DataSource = usuariosativos;
+                    break;
+
+                        case 2:
+                    var usuariosinativos = usuarioRepository.ListarUsuariosPorStatus(0);
+                    dataGridView1.DataSource = usuariosinativos;
+                    break;
+            }
+        }
+
+        
+
     }
 }

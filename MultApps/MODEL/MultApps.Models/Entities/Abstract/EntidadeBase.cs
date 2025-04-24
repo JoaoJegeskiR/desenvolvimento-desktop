@@ -1,5 +1,5 @@
 ﻿using System;
-using MultApps.Models.Enums;
+using MultiApps.Models.Enum;
 
 namespace MultApps.Models.Entities.Abstract
 {
