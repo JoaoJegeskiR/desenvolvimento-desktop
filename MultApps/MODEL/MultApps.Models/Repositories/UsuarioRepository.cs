@@ -78,11 +78,20 @@ namespace MultiApps.Models.Repositories
             }
         }
 
-        public Usuario ObterUsuario(int id)
+        public Usuario ObterUsuarioPorId(int id)
         {
             using (IDbConnection db = new MySqlConnection(ConnectionString))
             {
-                var comandoSql = @"SELECT id, nome, cpf, email, senha, data_cadastro AS DataCadastro, data_ultimoacesso AS DataUltimoAcesso, status AS Status FROM usuario WHERE id = @Id";
+                var comandoSql = @"SELECT id AS Id,
+                                    nome AS Nome,
+                                    cpf AS Cpf,
+                                    email AS Email,
+                                    senha AS Senha,
+                                    data_cadastro AS DataCadastro,
+                                    data_ultimo_acesso AS DataUltimoAcesso,
+                                    status AS Status
+                                    FROM usuario 
+                                    WHERE id = @Id";
                 var parametros = new DynamicParameters();
                 parametros.Add("@Id", id);
 
@@ -156,6 +165,46 @@ namespace MultiApps.Models.Repositories
                         usuario.DataUltimoAcesso);
                 }
                 return dataTable;
+            }
+        }
+
+        public Usuario ObterUsuarioPorEmail(string email)
+        {
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
+            {
+                var comandoSql = @"SELECT id AS Id,
+                                    nome AS Nome,
+                                    cpf AS Cpf,
+                                    email AS Email,
+                                    
+                                    senha AS Senha,
+                                    data_cadastro AS DataCadastro,
+                                    data_ultimo_acesso AS DataUltimoAcesso,
+                                    status AS Status
+                                    FROM Usuario 
+                                    WHERE email = @Email";
+                var parametros = new DynamicParameters();
+                parametros.Add("@Email", email);
+
+                var resultado = db.Query<Usuario>(comandoSql, parametros).FirstOrDefault();
+                return resultado;
+            }
+        }
+
+        public bool AtualizarSenha(string novasenha, string email)
+        {
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
+            {
+                var comandosql = @"UPDATE usuario
+                                    SET senha = @Senha, 
+                                    WHERE email = @Email";
+
+                var parametros = new DynamicParameters();
+                parametros.Add("@Senha", novasenha);
+                parametros.Add("@Email", email);
+
+                var resposta = db.Execute(comandosql, parametros);
+                return resposta > 0;
             }
         }
     }

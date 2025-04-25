@@ -64,6 +64,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1192, 367);
             this.dataGridView1.TabIndex = 16;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick_1);
             // 
             // label7
             // 
@@ -179,13 +180,13 @@
             // 
             this.btnDeletar.BackColor = System.Drawing.Color.Red;
             this.btnDeletar.Enabled = false;
-            this.btnDeletar.Location = new System.Drawing.Point(729, 122);
+            this.btnDeletar.Location = new System.Drawing.Point(716, 123);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(118, 38);
             this.btnDeletar.TabIndex = 14;
             this.btnDeletar.Text = "Deletar";
             this.btnDeletar.UseVisualStyleBackColor = false;
-            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click_1);
             // 
             // txtId
             // 
@@ -296,6 +297,7 @@
             this.btnLimpar.TabIndex = 18;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // FrmCadastro
             // 

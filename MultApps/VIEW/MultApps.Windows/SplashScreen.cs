@@ -19,10 +19,7 @@ namespace MultApps.Windows
             InitializeComponent();
         }
 
-        private void SplashScreen_Load(object sender, EventArgs e)
-        {
-            label1.Text = DateTime.Now.ToLongDateString();
-        }
+        
 
         private void SplashScreen_Shown(object sender, EventArgs e)
         {
@@ -37,5 +34,7 @@ namespace MultApps.Windows
 
             this.Close();
         }
+
+       
     }
 }

@@ -120,7 +120,7 @@ namespace MultApps.Windows
             var usuarioId = (int)row.Cells[0].Value;
 
             var usuarioRepository = new UsuarioRepository();
-            var usuario = usuarioRepository.ObterUsuario(usuarioId);
+            var usuario = usuarioRepository.ObterUsuarioPorId(usuarioId);
 
             if (usuario == null)
             {
@@ -249,7 +249,68 @@ namespace MultApps.Windows
             }
         }
 
-        
+      
 
+        private void dataGridView1_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                MessageBox.Show($"Houve um erro ao clicar duas vezes sobre o Grid");
+                return;
+            }
+
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+            var usuarioId = (int)row.Cells[5].Value;
+
+            var usuarioRepository = new UsuarioRepository();
+            var usuario = usuarioRepository.ObterUsuarioPorId(usuarioId);
+
+            if (usuario == null)
+            {
+                MessageBox.Show($"Usuario: #{usuarioId} não encontrada");
+                return;
+            }
+
+            txtId.Text = usuarioId.ToString();
+            txtNome.Text = usuario.Nome;
+            cmbStatus.SelectedIndex = (int)usuario.Status;
+            txtDataCadastro.Text = usuario.DataCriacao.ToString("dd/MM/yyyy HH:mm");
+            txtDataUltimoacesso.Text = usuario.DataUltimoAcesso.ToString("dd/MM/yyyy HH:mm");
+
+            btnDeletar.Enabled = false;
+            btnSalvar.Text = "Salvar Alterações";
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtCPF.Text = string.Empty;
+            txtNome.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtSenha.Text = string.Empty;
+            cmbStatus.SelectedIndex = 1;
+            txtDataCadastro.Text = string.Empty;
+            txtDataUltimoacesso.Text = string.Empty;
+        }
+
+        private void btnDeletar_Click_1(object sender, EventArgs e)
+        {
+            var usuarioId = int.Parse(txtId.Text);
+
+            var usuarioRepository = new UsuarioRepository();
+            var sucesso = usuarioRepository.DeletarUsuario(usuarioId);
+
+            if (sucesso)
+            {
+                MessageBox.Show("Categoria deletada com sucesso");
+                CarregarTodosUsuarios();
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível deletar a categoria" + txtNome.Text);
+            }
+
+            btnDeletar.Enabled = false;
+        }
     }
 }
