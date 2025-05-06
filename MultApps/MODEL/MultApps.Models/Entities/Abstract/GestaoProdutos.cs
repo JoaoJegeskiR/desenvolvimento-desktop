@@ -13,6 +13,7 @@ namespace MultApps.Models.Entities.Abstract
         public string Preco { get; set; }
         public string Estoque { get; set; } 
         public string Imagem { get; set; }
+        public string Descricao { get; set; }
 
     }
 }

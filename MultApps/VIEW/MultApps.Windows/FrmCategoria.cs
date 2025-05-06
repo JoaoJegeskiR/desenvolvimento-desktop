@@ -74,7 +74,7 @@ namespace MultApps.Windows
                 HeaderText = "Data de Cadastro",
                 DefaultCellStyle = new DataGridViewCellStyle { Format = "dd/MM/yyyy HH:MM" },
                 MinimumWidth = 200
-                
+
             });
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
             {
@@ -88,15 +88,16 @@ namespace MultApps.Windows
             {
                 DataPropertyName = "Status",
                 HeaderText = "Status",
-                DefaultCellStyle = new DataGridViewCellStyle {
-                    
-                    }
+                DefaultCellStyle = new DataGridViewCellStyle
+                {
+
+                }
             });
 
             dataGridView1.DataSource = listaDeCategorias;
 
 
-            
+
             dataGridView1.CellFormatting += dataGridView1_CellFormatting;
 
         }
